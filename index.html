@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Mensajes Cifrados</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Web que brinda una forma simple de encriptar y desencriptar mansajes para divertirte con tus amigos"
+        />
+        <meta name="robots" content="All" />
+        <meta name="language" content="Spanish" />
+        <meta name="author" content="sebascraton" />
+        <meta name="REPLY-TO" content="sebascraton@gmail.com" />
+        <meta name="distribution" content="Global" />
+        <meta name="Revisit-after" content="1 days" />
+        <meta name="theme-color" content="001100" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel=”icon” href=”favicon.ico” type=”image/x-icon” /> <link rel=”shortcut icon”
+        href=”favicon.ico” type=”image/x-icon” />
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-48x48.png" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+        <script defer src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="NavLogo">
+                <img class="logo" src="imagenes/logo.webp" alt="imagen de logo" />
+            </div>
+            <div class="NavTitle">
+                <h1 class="titulo">Mensaje cifrado</h1>
+            </div>
+            <div class="NavLeft">
+                <img class="logo" src="imagenes/logo-f.webp" alt="imagen de logo" />
+            </div>
+        </header>
+        <main>
+            <div class="contenedorTextarea1">
+                <textarea
+                    name="encriptar"
+                    id="textarea1"
+                    cols="10"
+                    rows="4"
+                    spellcheck="false"
+                    placeholder="Ingrese el texto que desea cifrar o descifrar..."
+                    oninput="numMinus(this)"
+                    min="1"
+                    autofocus
+                ></textarea>
+            </div>
+            <div class="contenedorTextarea2">
+                <textarea
+                    name="desencriptar"
+                    id="textarea2"
+                    cols="10"
+                    rows="4"
+                    placeholder=""
+                    spellcheck="false"
+                    onkeyup="numMinus(this)"
+                    min="1"
+                ></textarea>
+            </div>
+            <div id="contenedorImagen">
+                <div class="textoEnImagen" data-text="Ningun texto ingresado, ingrese su texto...">
+                    Ningun texto ingresado, ingrese su texto...
+                </div>
+                <div class="textoEnImagen1" data-text="Ingrese texto y cifrelo primero...">
+                    Ingrese texto y cifrelo primero...
+                </div>
+            </div>
+            <div class="aclaracion">
+                <div class="limpiarImput1" onclick="limpiarInput1()">
+                    <img class="backspace" src="./imagenes/arrow-up-square.svg" alt="backspace" />
+                </div>
+                <p>Solo minusculas sin acentos</p>
+                <div class="limpiarImput2" onclick="limpiarInput2()">
+                    <img class="backspace" src="./imagenes/arrow-up-square.svg" alt="backspace" />
+                </div>
+                <div class="limpiarImput2r" onclick="limpiarInput2()">
+                    <img class="backspace" src="./imagenes/arrow-down-square.svg" alt="backspace" />
+                </div>
+            </div>
+            <div class="contenedorBotones">
+                <div class="botones">
+                    <div class="contBotonCifrar">
+                        <input
+                            type="button"
+                            class="botonEncriptar"
+                            value="Cifrar"
+                            onclick="cifrar()"
+                        />
+                    </div>
+                    <div class="contBotonDescifrar">
+                        <input
+                            type="button"
+                            class="botonDesencriptar"
+                            value="Descifrar"
+                            onclick="descifrar()"
+                        />
+                    </div>
+                    <div class="botonCopy">
+                        <div class="contBotoncopiar">
+                            <input
+                                type="button"
+                                class="botonCopiar"
+                                value="Copiar"
+                                onclick="alPortapapeles()"
+                            />
+                        </div>
+                    </div>
+                    <div class="contBotonReload">
+                        <div class="">
+                            <input
+                                type="button"
+                                class="botonReload"
+                                value="Recargar"
+                                onclick="recargar()"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contBotoncopiado"><p>¡Texto cifrado Copiado!</p></div>
+            <footer>
+                <p>Desarrollador: escrib - v0.936</p>
+            </footer>
+        </main>
+    </body>
+</html>

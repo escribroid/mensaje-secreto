@@ -1,0 +1,675 @@
+:root {
+    color: #4dac26;
+    background-color: #001100;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #000500;
+}
+header {
+    display: flex;
+    align-items: center;
+    background-color: #001100;
+    justify-content: space-between;
+    padding: 0.5%;
+    height: clamp(6vh, 7.5vh, 8vh);
+}
+.NavLogo {
+    display: flex;
+    width: 2.5rem;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 0 0 0.4%;
+}
+.NavTitle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.NavLeft {
+    display: flex;
+    width: 2.5rem;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 0.4% 0 0;
+    visibility: hidden;
+}
+.logo {
+    width: 32px;
+    height: 48px;
+    border-radius: 5px;
+}
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: clamp(2rem, 4vmax, 6rem);
+    text-align: center;
+}
+Main {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    color: #00d400;
+    border-left: calc(100vw * 0.01) solid #001100;
+    border-right: calc(100vw * 0.01) solid #001100;
+    width: 100%;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    height: 92vh;
+}
+.contenedorTextarea1 {
+    display: flex;
+    margin: 0.5% 0 0 0;
+    width: 49%;
+}
+.contenedorTextarea2 {
+    display: none;
+    margin: 0.5% 0 0 0;
+    width: 49%;
+}
+#textarea1 {
+    border-radius: 10px;
+    overflow-x: hidden;
+    height: 65vh;
+}
+#textarea2 {
+    border-radius: 10px;
+    overflow-x: hidden;
+    height: 65vh;
+}
+textarea {
+    background-color: #000500;
+    color: #1b82af;
+    border-color: #002200;
+    border-width: 5px;
+    border-radius: 10px;
+    outline: 0 none;
+    transition: all 0.4s;
+    resize: none;
+    cursor: text;
+    width: 100%;
+    height: 100%;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+textarea:focus {
+    border-color: #21475b;
+}
+::placeholder {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 5%);
+    font-size: 1.2rem;
+    color: #1b82af;
+    line-height: 1.5;
+    padding: 1%;
+    text-align: center;
+    font-family: monospace;
+}
+#contenedorImagen {
+    display: flex;
+    position: relative;
+    border: 5px solid #002200;
+    border-radius: 10px;
+    background-image: url("../imagenes/fondo-negro-y-verde.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000500;
+    width: 48%;
+    height: 65vh;
+    margin: 0.5% 0 0 0;
+    transition: all 0.4s;
+}
+.textoEnImagen {
+    display: none;
+    color: #00d400;
+    position: absolute;
+    font-size: 1.8rem;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #000500;
+    border-radius: 5px;
+    background-color: #000500;
+    line-height: 1.5;
+    opacity: 95%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.textoEnImagen:after {
+    position: absolute;
+    content: attr(data-text);
+    text-shadow: -1px 0 #00ff00;
+    color: #00ff00;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.textoEnImagen:before {
+    position: absolute;
+    color: #00ff00;
+    text-shadow: 1px 0 #00ff00;
+    content: attr(data-text);
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 2s infinite linear alternate-reverse;
+}
+.textoEnImagen1 {
+    display: none;
+    color: #00d400;
+    position: absolute;
+    font-size: 1.8rem;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #000500;
+    border-radius: 5px;
+    background-color: #000500;
+    line-height: 1.5;
+    opacity: 95%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.textoEnImagen1:after {
+    position: absolute;
+    content: attr(data-text);
+    text-shadow: -1px 0 #00ff00;
+    color: #00ff00;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.textoEnImagen1:before {
+    position: absolute;
+    color: #00ff00;
+    text-shadow: 1px 0 #00ff00;
+    content: attr(data-text);
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 2s infinite linear alternate-reverse;
+}
+.aclaracion {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    color: #1e9cd2;
+    font-size: 1rem;
+    margin: 1%;
+    text-align: center;
+}
+.limpiarImput2r {
+    display: none;
+}
+.backspace {
+    width: 25px;
+    height: 25px;
+    padding: 0 1% 0 1%;
+}
+.contenedorBotones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1%;
+}
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    background: none;
+    width: 100%;
+    justify-content: center;
+}
+.contBotonCifrar {
+    display: flex;
+    justify-content: center;
+    padding: 1% 1% 1% 1%;
+}
+.contBotonDescifrar {
+    display: flex;
+    justify-content: center;
+    padding: 1% 1% 1% 1%;
+}
+.botonEncriptar {
+    font-family: consolas, monospace;
+    color: #00d400;
+    font-weight: bold;
+    width: 135px;
+    height: 50px;
+    font-size: 1.3em;
+    border: 2px #008800 solid;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #000500;
+}
+.botonEncriptar:hover {
+    font-weight: bold;
+    border-width: 5px;
+    background-color: #193c4f;
+    border-radius: 5px;
+}
+.botonDesencriptar {
+    font-family: consolas, monospace;
+    color: #00d400;
+    font-weight: bold;
+    width: 135px;
+    height: 50px;
+    font-size: 1.3em;
+    border: 2px #008800 solid;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #000500;
+}
+.botonDesencriptar:hover {
+    font-weight: bold;
+    border-width: 5px;
+    background-color: #193c4f;
+    border-radius: 5px;
+}
+.contBotoncopiar {
+    display: flex;
+}
+.botonCopy {
+    display: flex;
+    justify-content: center;
+    padding: 1% 1% 1% 1%;
+}
+.botonCopiar {
+    display: block;
+    font-family: consolas, monospace;
+    font-weight: bold;
+    width: 135px;
+    height: 50px;
+    color: #00d400;
+    background: none;
+    font-size: 1.3em;
+    border: 2px #008800 solid;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #000500;
+}
+.botonCopiar:hover {
+    font-weight: bold;
+    border-width: 5px;
+    background-color: #193c4f;
+    border-radius: 5px;
+}
+#contBotoncopiado {
+    display: none;
+    position: absolute;
+    top: 0.5%;
+    color: #00ff00;
+    background-color: #193c4f;
+    border-radius: 10px;
+    font-size: 2rem;
+    width: 100%;
+    height: 20%;
+    border: 2px #000000 solid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.botonCopiado {
+    font-family: consolas, monospace;
+    font-weight: bold;
+    color: #00d400;
+    background-color: #193c4f;
+    font-size: 4rem;
+    border: 6px #008800 solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+.contBotonReload {
+    padding: 1% 1% 1% 1%;
+}
+.botonReload {
+    display: flex;
+    font-family: consolas, monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00d400;
+    width: 135px;
+    height: 50px;
+    border: 2px #008800 solid;
+    border-radius: 20px;
+    background-color: #000500;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.botonReload:hover {
+    font-weight: bold;
+    border-width: 5px;
+    background-color: #193c4f;
+    border-radius: 5px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    color: #14a3f0;
+    background-color: #001100;
+    justify-content: center;
+    text-align: center;
+    height: 5vh;
+    width: 100%;
+    margin-bottom: 0;
+    font-family: monospace;
+}
+/* scrollbar */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: green green;
+}
+/* Webkit */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+*::-webkit-scrollbar-track {
+    background: rgb(2, 99, 2);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(2, 81, 22);
+    border-radius: 20px;
+    border: 2px solid rgb(5, 143, 3);
+}
+@media only screen and (max-width: 600px) {
+    .contenedorTextarea1 {
+        width: 100%;
+        margin: 0;
+    }
+    .contenedorTextarea2 {
+        width: 100%;
+        order: 2;
+        margin: 0;
+    }
+    #textarea1 {
+        font-size: 1.5em;
+        border-radius: 10px;
+        margin: 1% 1% 0% 1%;
+        height: 37vh;
+    }
+    #textarea2 {
+        font-size: 1.5em;
+        border-radius: 10px;
+        margin: 1% 1% 0% 1%;
+        height: 29vh;
+    }
+    #contenedorImagen {
+        height: 29vh;
+        width: 100%;
+        margin: 1% 1% 0% 1%;
+        order: 2;
+    }
+    .textoEnImagen {
+        font-size: 1.2rem;
+    }
+    .textoEnImagen1 {
+        font-size: 1.2rem;
+    }
+    .limpiarImput2 {
+        display: none;
+    }
+    .limpiarImput2r {
+        display: flex;
+    }
+    .contenedorBotones {
+        margin-bottom: 0;
+    }
+    .botonReload {
+        width: 130px;
+        height: 40px;
+    }
+    .botonEncriptar {
+        width: 130px;
+        height: 40px;
+    }
+    .botonDesencriptar {
+        width: 130px;
+        height: 40px;
+    }
+    .botonCopiar {
+        width: 130px;
+        height: 40px;
+    }
+}
+@media only screen and (max-width: 376px) {
+    header {
+        height: 9vh;
+    }
+    main {
+        height: 91vh;
+    }
+    #textarea1 {
+        height: 34vh;
+    }
+    #textarea2 {
+        max-height: 28vh;
+    }
+    #contenedorImagen {
+        max-height: 28vh;
+    }
+    .textoEnImagen {
+        font-size: 1.2rem;
+    }
+    .textoEnImagen1 {
+        font-size: 1.2rem;
+    }
+    .limpiarImput2 {
+        display: none;
+    }
+    .limpiarImput2r {
+        display: flex;
+    }
+    #contBotoncopiado {
+        font-size: 1.5rem;
+    }
+    footer {
+        height: 6vh;
+    }
+}
+@media (max-width: 950px) and (orientation: landscape) {
+    header {
+        height: 10vh;
+    }
+    .logo {
+        height: 32px;
+        width: auto;
+    }
+    .NavTitle {
+        margin: 0;
+    }
+    .NavLogo {
+        margin: 0;
+    }
+    main {
+        height: 90vh;
+    }
+    #textarea1 {
+        height: 55vh;
+    }
+    #textarea2 {
+        height: 55vh;
+    }
+    #contenedorImagen {
+        height: 55vh;
+    }
+    .textoEnImagen {
+        font-size: 1.2rem;
+    }
+    .textoEnImagen1 {
+        font-size: 1.2rem;
+    }
+    .botonEncriptar {
+        width: 125px;
+        height: 32px;
+    }
+    .botonDesencriptar {
+        width: 125px;
+        height: 32px;
+    }
+    .botonCopiar {
+        width: 125px;
+        height: 32px;
+    }
+    .botonReload {
+        width: 125px;
+        height: 32px;
+    }
+    #contBotoncopiado {
+        font-size: 1.5rem;
+    }
+}
+@keyframes noise-anim {
+    0% {
+        clip: rect(51px, 9999px, 28px, 0);
+    }
+    5% {
+        clip: rect(70px, 9999px, 19px, 0);
+    }
+    10% {
+        clip: rect(92px, 9999px, 13px, 0);
+    }
+    15% {
+        clip: rect(85px, 9999px, 49px, 0);
+    }
+    20% {
+        clip: rect(45px, 9999px, 56px, 0);
+    }
+    25% {
+        clip: rect(26px, 9999px, 31px, 0);
+    }
+    30% {
+        clip: rect(62px, 9999px, 73px, 0);
+    }
+    35% {
+        clip: rect(34px, 9999px, 11px, 0);
+    }
+    40% {
+        clip: rect(26px, 9999px, 61px, 0);
+    }
+    45% {
+        clip: rect(34px, 9999px, 71px, 0);
+    }
+    50% {
+        clip: rect(35px, 9999px, 69px, 0);
+    }
+    55% {
+        clip: rect(92px, 9999px, 81px, 0);
+    }
+    60% {
+        clip: rect(26px, 9999px, 85px, 0);
+    }
+    65% {
+        clip: rect(2px, 9999px, 68px, 0);
+    }
+    70% {
+        clip: rect(54px, 9999px, 79px, 0);
+    }
+    75% {
+        clip: rect(35px, 9999px, 85px, 0);
+    }
+    80% {
+        clip: rect(70px, 9999px, 60px, 0);
+    }
+    85% {
+        clip: rect(32px, 9999px, 26px, 0);
+    }
+    90% {
+        clip: rect(94px, 9999px, 53px, 0);
+    }
+    95% {
+        clip: rect(99px, 9999px, 92px, 0);
+    }
+    100% {
+        clip: rect(42px, 9999px, 27px, 0);
+    }
+}
+@keyframes noise-anim-2 {
+    0% {
+        clip: rect(21px, 9999px, 49px, 0);
+    }
+    5% {
+        clip: rect(27px, 9999px, 52px, 0);
+    }
+    10% {
+        clip: rect(21px, 9999px, 70px, 0);
+    }
+    15% {
+        clip: rect(65px, 9999px, 25px, 0);
+    }
+    20% {
+        clip: rect(24px, 9999px, 10px, 0);
+    }
+    25% {
+        clip: rect(61px, 9999px, 64px, 0);
+    }
+    30% {
+        clip: rect(34px, 9999px, 47px, 0);
+    }
+    35% {
+        clip: rect(46px, 9999px, 93px, 0);
+    }
+    40% {
+        clip: rect(46px, 9999px, 9px, 0);
+    }
+    45% {
+        clip: rect(67px, 9999px, 36px, 0);
+    }
+    50% {
+        clip: rect(72px, 9999px, 20px, 0);
+    }
+    55% {
+        clip: rect(79px, 9999px, 26px, 0);
+    }
+    60% {
+        clip: rect(13px, 9999px, 87px, 0);
+    }
+    65% {
+        clip: rect(10px, 9999px, 25px, 0);
+    }
+    70% {
+        clip: rect(85px, 9999px, 11px, 0);
+    }
+    75% {
+        clip: rect(94px, 9999px, 35px, 0);
+    }
+    80% {
+        clip: rect(50px, 9999px, 86px, 0);
+    }
+    85% {
+        clip: rect(74px, 9999px, 67px, 0);
+    }
+    90% {
+        clip: rect(1px, 9999px, 40px, 0);
+    }
+    95% {
+        clip: rect(3px, 9999px, 48px, 0);
+    }
+    100% {
+        clip: rect(90px, 9999px, 23px, 0);
+    }
+}
